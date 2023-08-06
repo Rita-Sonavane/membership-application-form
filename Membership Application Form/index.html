@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Membership Application Form</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-----------------------------  SignIn Form Start  --------------------------------->
+            <div class="signin">
+                <form action="http://localhost:3000/sign_in" method="post" class="form-sign-in" id="SignInForm">
+                    <h1>Sign In</h1>
+                    <input type="text" name="email" id="lemail" placeholder="&#xf0e0;&nbsp Email"
+                        style="font-family: Arial, 'Font Awesome 5 Free'" />
+
+                    <div class="Login-password-container">
+                        <input type="password" name="password" id="lpassword" placeholder="&#xf023;&nbsp Password"
+                            style="font-family: Arial, 'Font Awesome 5 Free'" />
+                        <i class="Login-password-toggle fas fa-eye" onclick="toggleLoginPasswordVisibility()"
+                            style="color:#757474;"></i>
+                    </div>
+                    <a href="ForgotPassword.html">Forgot your password?</a>
+
+                    <button type="submit" class="btn btn-form">SIGN IN</button>
+                </form>
+            </div>
+            <!-----------------------------  SignIn Form End  --------------------------------->
+
+
+            <!-----------------------------  SignUp Form Start  --------------------------------->
+            <div class="signup">
+                <form action="http://localhost:3000/sign_up" method="post" class="form-sign-up" id="SignUpForm">
+                    <h1>Sign Up</h1>
+                    <h4 class="mt-1">Membarship Application Form</h4>
+
+                    <!----------------------------- Full Name  --------------------------------->
+                    <input type="text" name="fname" id="fname" placeholder="&#xf007;&nbsp Name"
+                        style="font-family: Arial, 'Font Awesome 5 Free'" />
+
+                    <!----------------------------- Email  --------------------------------->
+                    <input type="text" name="email" id="email" placeholder="&#xf0e0;&nbsp Email"
+                        style="font-family: Arial, 'Font Awesome 5 Free'" />
+
+                    <!----------------------------- Password  --------------------------------->
+                    <div class="password-container">
+                        <input type="password" name="password" id="password" placeholder="&#xf023;&nbsp;Password"
+                            style="font-family: Arial, 'Font Awesome 5 Free'" />
+                        <i class="password-toggle fas fa-eye" onclick="togglePasswordVisibility()"
+                            style="color:#757474;"></i>
+                    </div>
+
+                    <!----------------------------- Retype Password  --------------------------------->
+                    <div class="rpassword-container">
+                        <input type="password" class="mb-5" name="rpassword" id="rpassword"
+                            placeholder="&#xf023;&nbsp Retype Password"
+                            style="font-family: Arial, 'Font Awesome 5 Free'" />
+                        <i class="rpassword-toggle fas fa-eye" onclick="toggleRPasswordVisibility()"
+                            style="color:#757474;"></i>
+                    </div>
+
+                    <!----------------------------- Gender --------------------------------->
+                    <div class="row text-start mt-5"
+                        style="display: flex; justify-content: space-between; align-items: center;">
+                        &nbsp&nbsp&nbsp&nbsp<label for="gender" class="text-start label" id="genderlabel"
+                            style="font-family: Arial, 'Font Awesome 5 Free'">Gender:</label>&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <label class="radio-container" style="display: flex;">
+                            <input type="radio" name="gender" value="female">
+                            <i class="radio-icon"></i> <span class="mt-5"
+                                style="font-size: 13px; margin-top: 7px;color:#757474;">Female</span>
+                        </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <label class="radio-container" style="display: flex;">
+                            <input type="radio" name="gender" value="male">
+                            <i class="radio-icon"></i><span class="mt-5"
+                                style="font-size: 13px; margin-top: 7px;color:#757474;">Male</span>
+                        </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    </div>
+
+
+                    <!----------------------------- Address --------------------------------->
+                    <input type="text" name="address" id="address" placeholder="&#xf041;&nbsp Address"
+                        style="font-family: Arial, 'Font Awesome 5 Free'" />
+
+
+                    <!----------------------------- Phone Number --------------------------------->
+                    <div class="row text-start mt-5 p-5 colums"
+                        style="display: flex; justify-content: space-between;align-items: center;">
+                        <input type="text" name="phone" id="phone" placeholder="&#xf3cd;&nbsp Phone Number"
+                            style="font-family: Arial, 'Font Awesome 5 Free'" />
+
+                        <input type="text" name="dob" id="dob" placeholder="&#xf073;&nbsp DOB"
+                            onfocus="(this.type='date')" onblur="(this.type='text')"
+                            style="font-family: Arial, 'Font Awesome 5 Free'">
+                    </div>
+
+                    <h4 class="text-start mt-5 mb-3">Professional Information</h4>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+                    <!----------------------------- qualification --------------------------------->
+                    <div class="qualification-container">
+                        <input type="text" name="qualification" id="qualification"
+                            placeholder="&#xf19d;&nbsp;Qualification" class="qualification-dropdown"
+                            style="font-family: Arial, 'Font Awesome 5 Free'" readonly onclick="toggleDropdown()" />
+                        <i class="fas fa-caret-down" id="fa-caret-down" onclick="toggleDropdown()"
+                            style="color:#757474;"></i>
+                        <div id="qualificationOptions" class="qualification-options" style="display: none;">
+                            <ul>
+                                <li onclick="selectQualification('High School')">High School</li>
+                                <li onclick="selectQualification('Bachelor\'s Degree')">Bachelor's Degree</li>
+                                <li onclick="selectQualification('Master\'s Degree')">Master's Degree</li>
+                                <li onclick="selectQualification('Ph.D.')">Ph.D.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!----------------------------- bExperience --------------------------------->
+                    <div class="bExperience-container">
+                        <input type="text" name="bExperience" id="bExperience"
+                            placeholder="&#xf0b1;&nbsp Business Experience" class="bExperience-dropdown"
+                            style="font-family: Arial, 'Font Awesome 5 Free'" readonly
+                            onclick="togglebExperienceDropdown()" />
+                        <i class="fas fa-caret-down" id="fa-caret-down" onclick="togglebExperienceDropdown()"
+                            style="color:#757474;"></i>
+                        <div id="bExperienceOptions" class="bExperience-options" style="display: none;">
+                            <ul>
+                                <li onclick="selectbExperienceQualification('Less than 1 year')">Less than 1 year</li>
+                                <li onclick="selectbExperienceQualification('1-3 years')">1-3 years
+                                </li>
+                                <li onclick="selectbExperienceQualification('3-5 years')">3-5 years</li>
+                                <li onclick="selectbExperienceQualification('5-10 years')">5-10 years</li>
+                                <li onclick="selectbExperienceQualification('More than 10 years')">More than 10 years
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!----------------------------- Current Occupation --------------------------------->
+                    <input type="text" name="currentOccu" id="currentOccu"
+                        placeholder="&#xf508;&nbsp Current Occupation"
+                        style="font-family: Arial, 'Font Awesome 5 Free';" />
+
+                    <!----------------------------- Annual Income --------------------------------->
+                    <div class="aIncome-container">
+                        <input type="text" name="aIncome" id="aIncome" placeholder="&#x20B9;&nbsp Annual Income"
+                            class="currentOccu-dropdown" readonly style="font-family: Arial, 'Font Awesome 5 Free'"
+                            onclick="toggleaIncomeDropdown()" />
+                        <i class="fas fa-caret-down" id="fa-caret-down" onclick="toggleaIncomeDropdown()"
+                            style="color:#757474;"></i>
+                        <div id="aIncomeOptions" class="aIncome-options" style="display: none;">
+                            <ul>
+                                <li onclick="selectaIncomeQualification('Less than 1 Lack')">Less than 1 Lack</li>
+                                <li onclick="selectaIncomeQualification('1 Lack - 5 Lack')">1 Lack - 5 Lack</li>
+                                <li onclick="selectaIncomeQualification('More than 5 Lack')">More than 5 Lack</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button type="submit" name="submit" class="btn btn-form">SIGN
+                        UP</button>
+                </form>
+                <div id="message-container"></div>
+            </div>
+            <!-----------------------------  SignUp Form End  --------------------------------->
+        </div>
+        <div class="overlay">
+            <div class="overlay-panel overlay-signin">
+                <h1>
+                    Welcome Back!
+                </h1>
+                <span>
+                    To keep connected with us please login with your personal info
+                </span>
+                <button class="btn btn-overlay" onclick="togglePage()">
+                    Sign In
+                </button>
+            </div>
+            <div class="overlay-panel overlay-signup">
+                <h1>
+                    Hello, Friend!
+                </h1>
+                <span>
+                    Enter your personal details and start journey with us
+                </span>
+                <button id="switch" class="btn btn-overlay" onclick="togglePage()">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    // toggle page
+    function togglePage() {
+        document.querySelector(".overlay-signin").classList.toggle("show");
+        document.querySelector(".overlay-signup").classList.toggle("hide");
+        document.querySelector(".signup").classList.toggle("show");
+        document.querySelector(".signin").classList.toggle("hide");
+    }
+
+    function validateForm() {
+        const form = document.getElementById("SignUpForm");
+        const fullName = form.fname.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const rpassword = form.rpassword.value;
+        const gender = form.gender.value;
+        const address = form.address.value;
+        const phone = form.phone.value;
+        const dob = form.dob.value;
+        const qualification = form.qualification.value;
+        const bExperience = form.bExperience.value;
+        const currentOccu = form.currentOccu.value;
+        const aIncome = form.aIncome.value;
+
+
+        if (fullName === "") {
+            alert("Full Name is required");
+            return false;
+        }
+
+        if (email === "" || !isValidEmail(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+
+        if (password === "") {
+            alert("Password is required");
+            return false;
+        }
+
+        if (rpassword === "") {
+            alert("Repeate Password is required");
+            return false;
+        }
+
+        if (password != rpassword) {
+            alert("Password Should Match");
+            return false;
+        }
+
+        if (gender === "") {
+            alert("Gender is required");
+            return false;
+        }
+
+        if (address === "") {
+            alert("Address is required");
+            return false;
+        }
+
+        if (phone === "" || !isValidPhone(phone)) {
+            alert("Please enter a valid Phone Number");
+            return false;
+        }
+
+        if (dob === "") {
+            alert("Date of Birth is required");
+            return false;
+        }
+
+        if (qualification === "") {
+            alert("Qualification is required");
+            return false;
+        }
+
+        if (bExperience === "") {
+            alert("Business Experience is required");
+            return false;
+        }
+
+        if (currentOccu === "") {
+            alert("current Occupation is required");
+            return false;
+        }
+
+        if (aIncome === "") {
+            alert("Annual Income is required");
+            return false;
+        }
+
+        return true;
+    }
+
+    function isValidEmail(email) {
+        const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        return emailPattern.test(email);
+    }
+
+    function isValidPhone(phone) {
+        const phonePattern = /^\d{10}$/;
+        return phonePattern.test(phone);
+    }
+
+    function isValidPassword(password) {
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
+        if ((password.length < 8 || password.length > 16) && (!passwordPattern.test(password))) {
+            alert("Password must contain at least one uppercase letter, one lowercase letter, and one digit, Password must contain at least 8 characters");
+            password.focus();
+            return false;
+        }
+    }
+
+    //After registration navigation to login
+    const form = document.getElementById("SignUpForm");
+    form.addEventListener("submit", function (event) {
+        if (validateForm()) {
+            console.log("Check");
+            //check if it is already register
+            alert("Registration Successfull");
+            document.getElementById("switch").click();
+        }
+    });
+
+    //Login Password toggle 
+    function toggleLoginPasswordVisibility() {
+        const lpasswordInput = document.getElementById('lpassword');
+        const lpasswordToggle = document.querySelector('.Login-password-toggle');
+
+        if (lpasswordInput.type === 'password') {
+            lpasswordInput.type = 'text';
+            lpasswordToggle.classList.remove('fa-eye');
+            lpasswordToggle.classList.add('fa-eye-slash');
+        } else {
+            lpasswordInput.type = 'password';
+            lpasswordToggle.classList.remove('fa-eye-slash');
+            lpasswordToggle.classList.add('fa-eye');
+        }
+    }
+
+    // Password toggle 
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const passwordToggle = document.querySelector('.password-toggle');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordToggle.classList.remove('fa-eye');
+            passwordToggle.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            passwordToggle.classList.remove('fa-eye-slash');
+            passwordToggle.classList.add('fa-eye');
+        }
+    }
+
+    //Retype Password toggle 
+    function toggleRPasswordVisibility() {
+        const rpasswordInput = document.getElementById('rpassword');
+        const rpasswordToggle = document.querySelector('.rpassword-toggle');
+
+        if (rpasswordInput.type === 'password') {
+            rpasswordInput.type = 'text';
+            rpasswordToggle.classList.remove('fa-eye');
+            rpasswordToggle.classList.add('fa-eye-slash');
+        } else {
+            rpasswordInput.type = 'password';
+            rpasswordToggle.classList.remove('fa-eye-slash');
+            rpasswordToggle.classList.add('fa-eye');
+        }
+    }
+
+    // qualificationOptions DropDown
+    function toggleDropdown() {
+        const qualificationOptions = document.getElementById('qualificationOptions');
+        qualificationOptions.style.display = qualificationOptions.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function selectQualification(qualification) {
+        const qualificationInput = document.getElementById('qualification');
+        qualificationInput.value = qualification;
+        toggleDropdown();
+    }
+
+    // bExperienceOptions DropDown
+    function togglebExperienceDropdown() {
+        const bExperienceOptions = document.getElementById('bExperienceOptions');
+        bExperienceOptions.style.display = bExperienceOptions.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function selectbExperienceQualification(bExperience) {
+        const bExperienceOptionsInput = document.getElementById('bExperience');
+        bExperienceOptionsInput.value = bExperience;
+        togglebExperienceDropdown();
+    }
+
+    // aIncomeOptions DropDown
+    function toggleaIncomeDropdown() {
+        const aIncomeOptions = document.getElementById('aIncomeOptions');
+        aIncomeOptions.style.display = aIncomeOptions.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function selectaIncomeQualification(currentOccu) {
+        const caIncomeOptionsInput = document.getElementById('aIncome');
+        caIncomeOptionsInput.value = currentOccu;
+        toggleaIncomeDropdown();
+    }
+
+
+
+    //Login Form Validation
+    function validateLoginForm() {
+        const form = document.getElementById("SignInForm");
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log("email", email, password);
+
+        if (email === "" || !isValidEmail(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+
+        if (password === "") {
+            alert("Password is required");
+            return false;
+        }
+
+        return true;
+    }
+
+
+    //After registration navigation to login
+    const loginForm = document.getElementById("SignInForm");
+    loginForm.addEventListener("submit", function (event) {
+        if (validateLoginForm()) {
+            alert("Login Successfull");
+        }
+    });
+
+</script>
+
+</html>

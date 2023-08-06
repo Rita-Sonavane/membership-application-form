@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        *,
+        *:before,
+        *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: #384047;
+        }
+
+        table {
+            /* max-width: 960px; */
+            margin: 10px auto;
+        }
+
+        caption {
+            font-size: 1.6em;
+            font-weight: 400;
+            padding: 10px 0;
+        }
+
+        thead th {
+            font-weight: 400;
+            background: #323333;
+            color: #FFF;
+        }
+
+        tr {
+            background: #f4f7f8;
+            border-bottom: 1px solid #FFF;
+            margin-bottom: 5px;
+        }
+
+        tr:nth-child(even) {
+            background: #e8eeef;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 20px;
+            font-weight: 300;
+        }
+
+        tfoot tr {
+            background: none;
+        }
+
+        tfoot td {
+            padding: 10px 2px;
+            font-size: 0.8em;
+            font-style: italic;
+            color: #8a97a0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <table>
+        <caption><b>Users Information</b></caption>
+        <thead>
+            <tr>
+                <th scope="col">Full Name</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone No</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Qualification</th>
+                <th scope="col">Current Occupation</th>
+                <th scope="col">Annual Income</th>
+            </tr>
+        </thead>
+        <tbody id="table_body">
+        </tbody>
+    </table>
+    <script>
+        var user = [];
+
+        fetch("http://localhost:3000/users")
+            .then((response) => {
+                // Check if the response status is OK (200) before parsing the JSON data
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json(); // Parse the response body as JSON
+            })
+            .then((data) => {
+
+                let tableDate = "";
+
+                data.map((values) => {
+                    console.log("values", values);
+
+                    tableDate += `
+                <tr>
+                <td>${values.fname}</td>
+                <td>${values.email}</td>
+                <td>${values.gender}</td>
+                <td>${values.address}</td>
+                <td>${values.phone}</td>
+                <td>${values.qualification}</td>
+                <td>${values.bExperience}</td>
+                <td>${values.currentOccu}</td>
+                <td>${values.aIncome}</td>
+                </tr>`
+                });
+
+                document.getElementById("table_body").innerHTML = tableDate;
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
+    </script>
+</body>
+
+</html>
